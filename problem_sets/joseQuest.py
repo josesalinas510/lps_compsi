@@ -1,6 +1,6 @@
 # Prompt asks for the user's input for their name and skill points
 print("Welcome to Jose's Quest! Enter your character's name below")
-name = int(raw_input())
+name = raw_input()
 
 print("You have 15 skill points to distribute among three skills. If you exceed the limit, all skills will be set to 5")
 
