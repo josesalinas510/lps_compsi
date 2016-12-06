@@ -5,9 +5,11 @@ y = []
 while x != "done":
 	print("What are your favorite shows? Type in 'done' when you're finished") 
 	show = raw_input()
+# if the input is "done", then the loop ends	
 	if show == "done":
         	x = "done"
 	y.append(show) 
+# the input "done" is removed from the list
 y.remove("done")
 print("Your favorite shows are:" + str(y))
 
