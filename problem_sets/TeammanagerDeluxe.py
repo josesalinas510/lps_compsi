@@ -18,7 +18,9 @@ class Player(object):
 		return summary
 # function to save team
 def saveTeam(playerList, filename):
+# opens the file
 	existingFile = open(filename, "w")
+# opens the file an input the information with a space in between	
 	for players in existingFile:
 		filename.write(player.name + " " + player.age + " " + player.goals + " " + player.jersNum + " " + player.position)
 	filename.close()
@@ -26,6 +28,7 @@ def saveTeam(playerList, filename):
 def LoadTeam(myList, filename):
 	loadTeam = open(filename, "r")
 	team = loadTeam.read()
+# splits the information into objects in a the list
 	while team != "":
 		details = team.split(" ")
 		addPlayers.append(filename(details[0], details[1], details[2], details[3], details[4]))
@@ -61,6 +64,7 @@ while keepRunning:
                 	print("(3) Save your player list to the file")
                 	print("(0) Leave the program (make sure to save first)")
 			userOption = int(raw_input())
+# user inputs the player's information
 			if userOption == 1:
 				print("Enter the player's information")     		
 				print("what is the player's name?")
@@ -90,6 +94,7 @@ while keepRunning:
 		oldTeam = []
 		print("What's the filename for your existing team? Enter the whole name, including its .tmd extension.")
 		userFile = raw_input()
+# loads in the the user's team
                 LoadTeam(oldTeam, userFile)
 		while TeamLoading:
 			print("What do you want to do? Enter the number of your choice and press Enter.")
@@ -113,12 +118,15 @@ while keepRunning:
                                 newPlayer = Player(playerName, playerAge, playerGoals)
                                 myPlayers.append(newPlayer)
                                 print("Thank you")
+# shows all of the players and their information
 			if userChoice == 2:
 				for players in myPlayers:	
 					print(players.getStats())
+# saves the user's progress manually
 			if userChoice == 3:
 				print("What would you like to call this file?")
 				filename = raw_input() + ".tmd"
-				saveTeam(myPlayers, filename)	
+				saveTeam(myPlayers, filename)
+# ends the program	
 			if userChoice == 0:
 				break	
